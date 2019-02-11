@@ -5,30 +5,7 @@ from mock_max30100 import MockMAX30100 as MAX30100
 from time import sleep
 import userInput
 
-'''
-def main():
-    pulseox = MAX30100()
-    count = 0
-    while True:
-        pulseox.update() # updates the sensor readings
-        bpm = pulseox.get_bpm() # Also Updates the values as well
-        avg_bpm = pulseox.get_avg_bpm()
-        ir_filtered, red_filtered = pulseox.get_filtered()
-        spo2 = pulseox.calculate_spo2()
-        if count %50 == 0:        
-            if bpm != -1:
-                print("BPM:", bpm)
-            else:
-                print("BPM: NO BEAT DETECTED")
-            print("AVG BPM:", avg_bpm)
-            print("SPO2:", spo2)
-            print("IR:", ir_filtered)
-            print("RED:", red_filtered)
-            print("====================")
-        count += 1    
-        sleep(0.01) # we only get 100 sps so update every 1/100 secs
-'''
-
+#will test the bpm_tester
 def bpm_tester():
     pulseox = MAX30100()
     #initialize the motor device
