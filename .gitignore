@@ -1,0 +1,15 @@
+#ignore backup
+dp3backup/
+
+#ignore basic ignores
+.DS_Store
+.swp*
+.swap*
+.swo
+
+#ignore external code
+filters.py
+max30100.py
+max30100_regs.py
+PCF8591_3.py
+
