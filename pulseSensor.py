@@ -22,30 +22,31 @@ def bpm_tester():
             bpm = pulseox.get_bpm() # Also Updates the values as well
             avg_bpm = pulseox.get_avg_bpm()
             #Gets the values every 10 seconds, to reduce error
-            if count % 400 == 0:
+            if count % 4 == 0:
                 # makes the current heart rate the average heart rate over the past 10 seconds
                 # account for error
                 if avg_bpm == None:
                     cur_avg
                     count += 1    
-                    sleep(0.01)
+                    sleep(1)
                     continue
                 cur_avg = avg_bpm
                 # checks to see if the current average heart rate is too high
-                if cur_avg >= (userInput.rest_bpm * 2) or cur_avg >= 120: 
-                    print("your heart rate is too high")
+                if cur_avg >= 110: 
+                    print("2. Your heart rate is too high")
                     motor.value = 1.0
                 # checks to see if the average heart rate has changed too much over the past 10 seconds 
-                elif (cur_avg / prev_avg) >= 1.4:
-                    print("your heart rate raised too fast")
+                elif (cur_avg / prev_avg) >= 1.3:
+                    print("2. Your heart rate raised too fast")
                     motor.value = 0.8
                 # if no abnormalities are detected
                 else:
                     motor.value = 0
+                    print("2. Your heartrate is fine")
                 prev_avg = cur_avg
         except Exception as e:
             print(e)
         count += 1    
-        sleep(0.01) # we only get 100 sps so update every 1/100 secs
+        sleep(1) # we only get 100 sps so update every 1/100 secs
 
         

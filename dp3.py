@@ -1,5 +1,5 @@
 from userInput import presets
-from Pulse import bpm_tester
+from pulseSensor import bpm_tester
 from forceSensor import force_tester
 from _thread import start_new_thread
 
@@ -9,7 +9,7 @@ def startup():
     while True:
         # will check to see what program the user wants to run
         try:
-            program = int(input("To run the program, press 1; \n To change presets, press 2; \n To quit, press 3"))
+            program = int(input("\tTo run the program, press 1; \n\tTo change presets, press 2;\n\tTo quit, press 3"))
             #runs main
             if program == 1:
                 print("Remember, you can press ctrl C anytime to quit")
