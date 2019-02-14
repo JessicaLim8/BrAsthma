@@ -8,7 +8,7 @@ If your breath compression force values, or average heart rate ever change drast
 '''
 
 rest_bpm = 65
-rest_force = 200
+rest_force = 20
 
 def presets():
 
@@ -35,5 +35,5 @@ def presets():
         except ValueError:
             print("You have entered an invalid input, please try again.")
     
-    print("Thanks for inputting your presets!")
+    print("Thanks for inputting your data! Notice: This will only last for the duration of the program")
     
